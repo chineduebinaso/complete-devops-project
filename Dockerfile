@@ -2,7 +2,7 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY terraform-configs/app.py .
+COPY app.py .
 
 RUN pip install flask
 
