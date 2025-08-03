@@ -17,7 +17,7 @@ jobs:
         
       - name: Build Docker image
         working-directory: .
-                run: |
+        run: |
           docker build -t chineduebinaso/complete-devops-project:${{ env.SHORT_SHA }} .         
       - name: Login to Docker Hub
         run: |
