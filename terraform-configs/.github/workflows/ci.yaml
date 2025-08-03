@@ -6,11 +6,11 @@ on:
       - main
 
 jobs:
-  build-and-push:  
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  
+        uses: actions/checkout@v4
         
       - name: Set Short SHA
         run: echo "SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
@@ -19,7 +19,7 @@ jobs:
         run: |
           docker build -t chineduebinaso/complete-devops-project:${{ env.SHORT_SHA }} .
           
-      - name: Login to Docker Hub  
+      - name: Login to Docker Hub
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
           
